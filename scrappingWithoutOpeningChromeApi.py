@@ -20,14 +20,15 @@ def scrape_data():
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
     try:
-        url = "https://www.7nishchay-yuvaupmission.bihar.gov.in/listofcollegedetail"
+        # url = "https://www.7nishchay-yuvaupmission.bihar.gov.in/listofcollegedetail"
+        url = "https://www.jio.com/mobile"
         driver.get(url)
 
         wait = WebDriverWait(driver, 10)
-        link = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr[1]/td[1]/a[1]")))
+        # link = wait.until(EC.element_to_be_clickable((By.XPATH, "//tbody/tr[1]/td[1]/a[1]")))
 
-        link.click()
-        wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+        # link.click()
+        # wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
 
         html_dom = driver.page_source
         return {"html": html_dom}
